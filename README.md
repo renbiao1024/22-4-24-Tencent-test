@@ -102,7 +102,7 @@ int main()
         	if(attack > defense) break;
 		if(s[i] == '0')attack += i+1;
 		else defense -= i+1;
-        	res = max(res,abs(attack-defense));
+        	res = min(res,abs(attack-defense));
 	}
 	cout << res;
 }
