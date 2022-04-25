@@ -99,10 +99,10 @@ int main()
 	int res = abs(attack-defense);
 	for (int i = 0; i < n; ++i)
 	{
-        if(attack > defense) break;
+        	if(attack > defense) break;
 		if(s[i] == '0')attack += i+1;
 		else defense -= i+1;
-        res = max(res,abs(attack-defense));
+        	res = max(res,abs(attack-defense));
 	}
 	cout << res;
 }
@@ -188,12 +188,13 @@ int main() {
 			dp[i][j] = max(dp[i - 1][j],dp[i - 1][j + 1] + prices[i]);
 			//如果j大于0而且前一天的现金数目大于今天的股票价格，即股票数目大于0有可能是(持有/卖出)或者买入1只股票转化而来的状态
 			if (j && dp[i - 1][j - 1] >= prices[i])
-                dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] - prices[i]);
+                		dp[i][j] = max(dp[i][j], dp[i - 1][j - 1] - prices[i]);
 		}
 		cout << endl;
 	}
 	int res = 0;
-	for (i = 0;i <= n;i++)res = max(res, dp[n][i] + i * prices[n]);
+	for (i = 0;i <= n;i++)
+		res = max(res, dp[n][i] + i * prices[n]);
 	cout << res;
 }
 ~~~
